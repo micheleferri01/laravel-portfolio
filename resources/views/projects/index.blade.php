@@ -8,8 +8,8 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Author</th>
                 <th>Client</th>
-                <th>Resume</th>
                 <th></th>
             </tr>
         </thead>
@@ -17,8 +17,8 @@
             @foreach($projects as $project)
             <tr>
                 <td>{{$project->name}}</td>
+                <td>{{$project->author}}</td>
                 <td>{{$project->client}}</td>
-                <td>{{$project->resume}}</td>
                 <td><a href="{{route('projects.show',$project->id)}}">See more</a></td>
             </tr>
             @endforeach
