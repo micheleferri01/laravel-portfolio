@@ -5,7 +5,7 @@
 
     <h1 class='my-3'>Projects</h1>
     <div class="mb-2">
-        <a href="route(projects.create)" class="btn btn-primary">Add new project</a>
+        <a href="{{route('projects.create')}}" class="btn btn-primary">Add new project</a>
     </div>
     <table class="table table-striped">
         <thead>
