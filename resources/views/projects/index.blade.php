@@ -1,9 +1,12 @@
 @extends('layouts/app')
 
 @section('content')
-<div class="container">
+
 
     <h1 class='my-3'>Projects</h1>
+    <div class="mb-2">
+        <a href="route(projects.create)" class="btn btn-primary">Add new project</a>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -25,5 +28,5 @@
         </tbody>
     
     </table>
-</div>
+
 @endsection
