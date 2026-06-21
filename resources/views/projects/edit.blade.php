@@ -33,7 +33,7 @@
     </div>
     <div class="mt-3">
         <input type="submit" value="Save" class="btn btn-primary">
-        <a href="{{route(projects.index)" class="btn btn-danger">Cancel</a>
+        <a href="{{route('projects.index')}}" class="btn btn-danger">Cancel</a>
     </div>
 
 </form>
