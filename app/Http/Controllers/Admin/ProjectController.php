@@ -60,23 +60,33 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Project $project)
     {
-        //
+        $typologies = Typology::all();
+        return view('projects.edit', compact('project', 'typologies'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $data = $request->all();
+
+        $project->name = $data['name'];
+        $project->author = $data['author'];
+        $project->client = $data['client'];
+        $project->typology = $data['typology'];
+        $project->resume = $data['resume'];
+        $project->update();
+
+        return redirect()->route('projects.show', compact('project'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
         //
     }
