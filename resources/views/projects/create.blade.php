@@ -17,10 +17,10 @@
         <input type="text" name="client" id="client" class="form-control">
     </div>
     <div class="mt-2">
-        <label for="typology" class="form-label">Typology</label>
-        <select name="typology" id="typology" class="form-control">
+        <label for="typology_id" class="form-label">Typology</label>
+        <select name="typology_id" id="typology_id" class="form-control">
                 @foreach($typologies as $typology)
-                    <option>{{$typology->name}}</option>
+                    <option value="{{$typology->id}}">{{$typology->name}}</option>
                 @endforeach
         </select>
     </div>

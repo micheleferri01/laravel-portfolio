@@ -18,18 +18,16 @@
         <input type="text" name="client" id="client" class="form-control" value="{{$project->client}}">
     </div>
     <div class="mt-2">
-        <label for="typology" class="form-label">Typology</label>
-        <select name="typology" id="typology" class="form-control" value="{{$project->tyology}}">
+        <label for="typology_id" class="form-label">Typology</label>
+        <select name="typology_id" id="typology_id" class="form-control">
             @foreach($typologies as $typology)
-            <option>{{$typology->name}}</option>
+            <option value="{{$typology->id}}" {{$project->typology_id == $typology->id? 'selected' : ''}}>{{$typology->name}}</option>
             @endforeach
         </select>
     </div>
     <div class="mt-2">
         <label for="resume" class="form-label">Project's description</label>
-        <textarea name="resume" id="resume" class="form-control">
-        {{$project->resume}}
-        </textarea>
+        <textarea name="resume" id="resume" class="form-control">{{$project->resume}}</textarea>
     </div>
     <div class="mt-3">
         <input type="submit" value="Save" class="btn btn-primary">

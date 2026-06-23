@@ -18,7 +18,7 @@
 </div>
 
 <h3 class='fs-4'>Client: {{$project->client}}</h2>
-<h4>Typology: {{$project->typology}}</h4>
+<h4>Typology: {{$project->typology->name}}</h4>
 <p>{{$project->resume}}</p>
 @endsection
 
