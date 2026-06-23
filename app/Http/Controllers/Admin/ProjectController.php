@@ -40,7 +40,7 @@ class ProjectController extends Controller
         $newProject->name = $data['name'];
         $newProject->author = $data['author'];
         $newProject->client = $data['client'];
-        $newProject->typology = $data['typology'];
+        $newProject->typology_id = $data['typology_id'];
         $newProject-> resume = $data['resume'];        
         $newProject->save();
 
@@ -76,7 +76,7 @@ class ProjectController extends Controller
         $project->name = $data['name'];
         $project->author = $data['author'];
         $project->client = $data['client'];
-        $project->typology = $data['typology'];
+        $project->typology_id = $data['typology_id'];
         $project->resume = $data['resume'];
         $project->update();
 
