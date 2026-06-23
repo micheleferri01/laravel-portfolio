@@ -23,7 +23,7 @@ class ProjectsTableSeeder extends Seeder
             $newProject->author = $faker->name();
             $newProject->client = $faker->company();
             $newProject->resume = $faker->sentence(23);
-            $newProject->typology = $faker->randomElement($typologies->pluck('name')->toArray());
+            $newProject->typology_id = $faker->randomElement($typologies->pluck('id')->toArray());
             $newProject->save();
         }
     }
