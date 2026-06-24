@@ -40,6 +40,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/projects') }}">{{ __('Projects') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/typologies') }}">{{ __('Typologies') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
