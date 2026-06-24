@@ -53,7 +53,7 @@ class typologiesController extends Controller
      */
     public function edit(Typology $typology)
     {
-        return view('typologies.edit', $typology);
+        return view('typologies.edit', compact('typology'));
     }
 
     /**
@@ -67,7 +67,7 @@ class typologiesController extends Controller
         $typology->description = $data['description'];
         $typology->update();
 
-        return redirect()->route('typologies.show', $typology);
+        return redirect()->route('typologies.show', compact('typology'));
     }
 
     /**
