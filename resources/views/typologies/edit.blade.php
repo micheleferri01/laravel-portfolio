@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="my-3">Edit typology</h1>
 
-<form action="{{route('typologies.edit')}}" method="post">
+<form action="{{route('typologies.update',$typology)}}" method="post">
     @csrf
     @method('put')
     <div class="my-2">
@@ -15,7 +15,7 @@
         <textarea name="description" id="description" class="form-control">{{$typology->description}}</textarea>
     </div>
     <div class="my-2">
-        <input type="submit" value="Edit" class="btn btn-primary">
+        <input type="submit" value="Save" class="btn btn-primary">
         <a href="{{route('typologies.index')}}" class="btn btn-danger">Cancel</a>
     </div>
 </form>
