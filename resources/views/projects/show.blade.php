@@ -4,6 +4,7 @@
 
 <div class='my-3'>
     <h1>{{$project->name}}</h1>
+    <h2>- {{$project->author}}</h2>
     <div class="btn-group py-4" role="group">
         <a href="{{route('projects.edit', $project)}}" class="btn btn-warning">
             <i class="bi bi-pencil-square"></i>
@@ -14,12 +15,18 @@
             <i class="bi bi-trash3"></i>
         </button>
     </div>
-    <h2>- {{$project->author}}</h2>
 </div>
 
 <h3 class='fs-4'>Client: {{$project->client}}</h2>
 <h4>Typology: {{$project->typology->name}}</h4>
-<p>{{$project->resume}}</p>
+@if(count($project->technology) > 0)
+<small class="py-3">
+    @foreach($project->technology as $technology)
+        <span class="badge" style="background-color: {{$technology->color}}">{{$technology->name}}</span>
+    @endforeach
+</small>
+@endif
+<p class="mt-3">{{$project->resume}}</p>
 @endsection
 
     <!-- Modal -->
