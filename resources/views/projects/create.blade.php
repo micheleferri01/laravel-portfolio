@@ -24,13 +24,21 @@
                 @endforeach
         </select>
     </div>
+    <div class="mt-2 d-flex flax-wrap gap-3 form-control">
+        @foreach($technologies as $technology)
+        <div>
+            <input type="checkbox" name="technologies[]" id="technology-{{$technology->id}}" value="{{$technology->id}}"/>
+            <label for="technology-{{$technology->id}}">{{$technology->name}}</label>
+        </div>
+        @endforeach
+    </div>
     <div class="mt-2">
         <label for="resume" class="form-label">Project's description</label>
         <textarea name="resume" id="resume" class="form-control"></textarea>
     </div>
     <div class="mt-3">
         <input type="submit" value="Save" class="btn btn-primary">
-        <a href="{{route(projects.index)" class="btn btn-danger">Cancel</a>
+        <a href="{{route('projects.index')}}" class="btn btn-danger">Cancel</a>
     </div>
 
 </form>

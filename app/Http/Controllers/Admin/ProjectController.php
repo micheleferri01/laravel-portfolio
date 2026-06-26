@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Typology;
 
 class ProjectController extends Controller
@@ -25,7 +26,8 @@ class ProjectController extends Controller
     public function create()
     {
         $typologies = Typology::all();
-        return view('projects.create', compact('typologies'));
+        $technologies = Technology::all();
+        return view('projects.create', compact('typologies', 'technologies'));
         
     }
 
@@ -43,6 +45,7 @@ class ProjectController extends Controller
         $newProject->typology_id = $data['typology_id'];
         $newProject-> resume = $data['resume'];        
         $newProject->save();
+        $newProject->technology()->attach($data['technologies']);
 
         return redirect()->route('projects.show', $newProject);
 
@@ -63,7 +66,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $typologies = Typology::all();
-        return view('projects.edit', compact('project', 'typologies'));
+        $technologies = Technology::all();
+        return view('projects.edit', compact('project', 'typologies', 'technologies'));
     }
 
     /**
