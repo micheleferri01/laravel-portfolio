@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->dropForeign('projects_typology_id_foreign');
+            $table->dropForeign(['typology_id']);
             $table->dropColumn('typology_id');
 
             $table->foreignId('typology_id')->constrained()->cascadeOnDelete();
@@ -25,7 +25,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->dropForeign('projects_typology_id_foreign');
+            $table->dropForeign(['typology_id']);
             $table->dropColumn('typology_id');
 
             $table->foreignId('typology_id')->constrained();

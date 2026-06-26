@@ -14,9 +14,18 @@ return new class extends Migration
         Schema::table('project_technology', function (Blueprint $table) {
             $table->dropForeign(['project_id']);
             $table->dropForeign(['technology_id']);
+        });
 
-            $table->foreignId('project_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('technology_id')->constrained()->cascadeOnDelete();
+        Schema::table('project_technology', function (Blueprint $table) {
+            $table->foreign('project_id')
+                ->references('id')
+                ->on('projects')
+                ->cascadeOnDelete();
+
+            $table->foreign('technology_id')
+                ->references('id')
+                ->on('technologies')
+                ->cascadeOnDelete();
         });
     }
 
@@ -28,9 +37,16 @@ return new class extends Migration
         Schema::table('project_technology', function (Blueprint $table) {
             $table->dropForeign(['project_id']);
             $table->dropForeign(['technology_id']);
+        });
 
-            $table->foreignId('project_id')->constrained();
-            $table->foreignId('technology_id')->constrained();
+        Schema::table('project_technology', function (Blueprint $table) {
+            $table->foreign('project_id')
+                ->references('id')
+                ->on('projects');
+
+            $table->foreign('technology_id')
+                ->references('id')
+                ->on('technologies');
         });
     }
 };
