@@ -25,6 +25,14 @@
             @endforeach
         </select>
     </div>
+    <div class="mt-2 d-flex flax-wrap gap-3 form-control">
+        @foreach($technologies as $technology)
+        <div>
+            <input type="checkbox" name="technologies[]" id="technology-{{$technology->id}}" value="{{$technology->id}}" {{$project->technology->contains($technology->id)? 'checked' : ''}}/>
+            <label for="technology-{{$technology->id}}">{{$technology->name}}</label>
+        </div>
+        @endforeach
+    </div>
     <div class="mt-2">
         <label for="resume" class="form-label">Project's description</label>
         <textarea name="resume" id="resume" class="form-control">{{$project->resume}}</textarea>

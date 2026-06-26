@@ -83,6 +83,7 @@ class ProjectController extends Controller
         $project->typology_id = $data['typology_id'];
         $project->resume = $data['resume'];
         $project->update();
+        $project->technology()->sync($data['technologies']);
 
         return redirect()->route('projects.show', compact('project'));
     }
