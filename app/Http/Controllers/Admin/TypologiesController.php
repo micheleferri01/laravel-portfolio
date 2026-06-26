@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Typology;
 use Illuminate\Http\Request;
 
-class typologiesController extends Controller
+class TypologiesController extends Controller
 {
     /**
      * Display a listing of the resource.
