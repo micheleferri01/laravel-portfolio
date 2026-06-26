@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\typologiesController;
+use App\Http\Controllers\Admin\TechnologiesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,6 +29,7 @@ Route::middleware(['auth','verified'])
 });
 
 Route::resource('projects', ProjectController::class)->middleware(['auth', 'verified']);
-Route::resource('typologies', typologiesController::class)->middleware(['auth', 'verified']);
+Route::resource('typologies', TypologiesController::class)->middleware(['auth', 'verified']);
+Route::resource('technologies', TechnologiesController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
